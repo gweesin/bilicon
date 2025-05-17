@@ -40,7 +40,7 @@ async function main(): Promise<void> {
   await Promise.all(icons.map(async (icon) => {
     const dataURI = await encodeFromURL(icon.url)
     const filename = `${icon.meta.alias}.svg`
-    const fileContent = `<svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="[外部宽度]" height="[外部高度]">
+    const fileContent = `<svg viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64">
   <image xlink:href="${dataURI}" width="100%" height="100%" />
 </svg>`
 
