@@ -8,7 +8,7 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-_description_
+using bilibili icon with iconify!
 
 ## License
 
