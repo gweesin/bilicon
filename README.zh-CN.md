@@ -1,6 +1,6 @@
-# bilicon
+# <p align="center">bilicon</p>
 
-<p align="center"><a href="https://bilicon.netlify.app/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://bilicon.netlify.app/images/logo.png" alt="Bilibili Iconify Logo"></a></p>
+<p align="center"><a href="https://bilicon.netlify.app/" target="_blank" rel="noopener noreferrer"><img width="200" src="https://bilicon.netlify.app/images/logo.png" alt="Bilibili Iconify Logo"></a></p>
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
