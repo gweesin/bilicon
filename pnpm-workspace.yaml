@@ -3,6 +3,10 @@ packages:
   - docs
   - packages/*
   - examples/*
+catalog:
+  '@iconify/types': ^2.0.0
+  '@types/fs-extra': ^11.0.4
+  fs-extra: ^11.3.0
 catalogs:
   cli:
     '@antfu/eslint-config': ^4.10.1
