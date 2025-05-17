@@ -8,13 +8,13 @@
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
 
-English | [中文](./README.zh-CN.md)
+[English](./README.md) | 中文
 
-using bilibili icon with iconify!
+使用 iconify 轻松获取 B 站图标！
 
-## License
+## 许可证
 
-[MIT](./LICENSE) License © [Gweesin](https://github.com/gweesin)
+[MIT](./LICENSE) 许可证 © [Gweesin](https://github.com/gweesin)
 
 <!-- Badges -->
 

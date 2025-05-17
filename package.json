@@ -1,5 +1,5 @@
 {
-  "name": "bilibili-iconify",
+  "name": "bilicon",
   "type": "module",
   "version": "0.0.2",
   "packageManager": "pnpm@10.6.2",
@@ -7,12 +7,12 @@
   "author": "gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/gweesin",
-  "homepage": "https://github.com/gweesin/bilibili-iconify#readme",
+  "homepage": "https://github.com/gweesin/bilicon#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gweesin/bilibili-iconify.git"
+    "url": "git+https://github.com/gweesin/bilicon.git"
   },
-  "bugs": "https://github.com/gweesin/bilibili-iconify/issues",
+  "bugs": "https://github.com/gweesin/bilicon/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
