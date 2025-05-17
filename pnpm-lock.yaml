@@ -141,7 +141,7 @@ importers:
         specifier: catalog:testing
         version: 2.7.0
 
-  playground:
+  docs:
     dependencies:
       bilicon:
         specifier: workspace:^
