@@ -10,7 +10,7 @@
 
 English | [中文](./README.zh-CN.md)
 
-using bilibili icon with iconify!
+using bilibili icon everywhere with iconify!!
 
 ## License
 

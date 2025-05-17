@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.6",
   "packageManager": "pnpm@10.6.2",
-  "description": "using bilibili icon with iconify!",
+  "description": "using bilibili icon everywhere with iconify!",
   "author": "gweesin<gweesin2000@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/gweesin",

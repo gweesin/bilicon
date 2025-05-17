@@ -10,7 +10,7 @@
 
 [English](./README.md) | 中文
 
-使用 iconify 轻松获取 B 站图标！
+通过 iconify 在任何地方使用 B 站图标！
 
 ## 许可证
 
