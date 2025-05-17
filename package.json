@@ -34,6 +34,7 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
+    "gen": "tsx scripts/gen.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
@@ -42,6 +43,7 @@
     "@antfu/eslint-config": "catalog:cli",
     "@antfu/ni": "catalog:cli",
     "@antfu/utils": "catalog:inlined",
+    "@iconify/tools": "catalog:",
     "@iconify/types": "catalog:",
     "@types/fs-extra": "catalog:",
     "@types/node": "catalog:types",
@@ -49,6 +51,7 @@
     "eslint": "catalog:cli",
     "fs-extra": "catalog:",
     "lint-staged": "catalog:cli",
+    "p-limit": "catalog:",
     "simple-git-hooks": "catalog:cli",
     "tinyexec": "catalog:utils",
     "tsx": "catalog:cli",

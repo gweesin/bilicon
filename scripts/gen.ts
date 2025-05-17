@@ -1,7 +1,9 @@
-import type { IconifyIcon, IconifyJSON } from '@iconify/types'
 import type { BiliIconEmote, BiliIconPackage } from './types'
 import { Buffer } from 'node:buffer'
+import { blankIconSet } from '@iconify/tools'
 import fse from 'fs-extra'
+import pLimit from 'p-limit'
+import { author, license } from '../package.json'
 
 async function getEmotePackages(): Promise<BiliIconPackage[]> {
   const data = await fetch('https://api.bilibili.com/x/emote/user/panel/web?business=reply').then(response => response.json()).then(json => (json as unknown as { data: { packages: BiliIconPackage[] } }).data)
@@ -27,28 +29,35 @@ async function encodeFromURL(url: string): Promise<string> {
 
 async function main(): Promise<void> {
   const icons = await getStandardIcons()
+  const iconSet = blankIconSet('bili')
+  iconSet.info = {
+    name: 'bilibili',
+    author: {
+      name: author.replace(/<.*>/g, ''),
+    },
+    license: {
+      title: license,
+    },
+  }
 
-  const iconifyList: Array<Record<string, IconifyIcon>> = await Promise.all(icons.map(async (icon) => {
-    const dataURI = await encodeFromURL(icon.url)
+  const limit = pLimit(10)
 
-    const iconifyIcon: IconifyIcon = {
-      body: `<image width="100%" height="100%" xlink:href="${dataURI}" />`,
+  const iconList = await Promise.all(icons.map(icon =>
+    limit(async () => ({
+      ...icon,
+      dataURI: await encodeFromURL(icon.url),
     }
+    )),
+  ))
 
-    return {
-      [icon.meta.alias]: iconifyIcon,
-    }
-  }))
-
-  const iconifyJSON: IconifyJSON = iconifyList.reduce((obj, iconifyIcon) => {
-    Object.assign(obj.icons, iconifyIcon)
-    return obj
-  }, {
-    prefix: 'bili',
-    icons: {},
+  iconList.forEach((icon) => {
+    iconSet.setIcon(icon.meta.alias, {
+      body: `<image width="100%" height="100%" xlink:href="${icon.dataURI}" />`,
+    })
   })
 
-  await fse.writeJSON('./json/bili.json', iconifyJSON, {
+  const data = iconSet.export()
+  await fse.writeJSON('./json/bili.json', data, {
     spaces: 2,
   })
 }
