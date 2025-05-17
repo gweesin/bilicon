@@ -23,9 +23,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "files": [
-    "dist",
-    "index.mjs",
-    "json"
+    "dist"
   ],
   "scripts": {
     "build": "unbuild",
