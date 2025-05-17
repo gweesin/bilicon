@@ -42,19 +42,15 @@ async function main(): Promise<void> {
 
   const limit = pLimit(10)
 
-  const iconList = await Promise.all(icons.map(icon =>
-    limit(async () => ({
-      ...icon,
-      dataURI: await encodeFromURL(icon.url),
-    }
-    )),
-  ))
+  await Promise.all(icons.map(icon =>
+    limit(async () => {
+      const dataURI = await encodeFromURL(icon.url)
 
-  iconList.forEach((icon) => {
-    iconSet.setIcon(icon.meta.alias, {
-      body: `<image width="100%" height="100%" xlink:href="${icon.dataURI}" />`,
-    })
-  })
+      iconSet.setIcon(icon.meta.alias, {
+        body: `<image width="100%" height="100%" xlink:href="${dataURI}" />`,
+      })
+    }),
+  ))
 
   const data = iconSet.export()
   await fse.writeJSON('./json/bili.json', data, {
