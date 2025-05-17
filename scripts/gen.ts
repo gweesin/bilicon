@@ -4,6 +4,7 @@ import { blankIconSet } from '@iconify/tools'
 import fse from 'fs-extra'
 import pLimit from 'p-limit'
 import { author, license } from '../package.json'
+import { replaceSquareBrackets } from '../src/utils'
 
 async function getEmotePackages(): Promise<BiliIconPackage[]> {
   const data = await fetch('https://api.bilibili.com/x/emote/user/panel/web?business=reply').then(response => response.json()).then(json => (json as unknown as { data: { packages: BiliIconPackage[] } }).data)
@@ -46,7 +47,7 @@ async function main(): Promise<void> {
     limit(async () => {
       const dataURI = await encodeFromURL(icon.url)
 
-      iconSet.setIcon(icon.meta.alias, {
+      iconSet.setIcon(replaceSquareBrackets(icon.text), {
         body: `<image width="100%" height="100%" xlink:href="${dataURI}" />`,
       })
     }),
