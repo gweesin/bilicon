@@ -40,7 +40,7 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
-    "@iconify/types": "catalog:"
+    "@iconify/types": "^2.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:cli",
