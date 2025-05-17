@@ -35,7 +35,9 @@
     "gen": "tsx scripts/gen.ts",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
+    "prepare": "simple-git-hooks",
+    "docs:dev": "pnpm run -C playground dev",
+    "docs:build": "pnpm run -C playground build"
   },
   "dependencies": {
     "@iconify/types": "^2.0.0"
