@@ -5,7 +5,6 @@ packages:
   - examples/*
 catalog:
   '@iconify/tools': ^4.1.2
-  '@iconify/types': ^2.0.0
   '@types/fs-extra': ^11.0.4
   fs-extra: ^11.3.0
   p-limit: ^6.2.0
