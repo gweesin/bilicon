@@ -1,5 +1,7 @@
 # bilibili-iconify
 
+<p align="center"><a href="https://bilibili-iconify.netlify.app/" target="_blank" rel="noopener noreferrer"><img width="100" src="https://bilibili-iconify.netlify.app/images/logo.png" alt="Bilibili Iconify Logo"></a></p>
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![bundle][bundle-src]][bundle-href]
