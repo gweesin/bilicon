@@ -37,7 +37,8 @@
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks",
     "docs:dev": "pnpm run -C docs dev",
-    "docs:build": "pnpm run -C docs build"
+    "docs:build": "pnpm run -C docs build",
+    "ci:build": "pnpm build && pnpm docs:buiild"
   },
   "dependencies": {
     "@iconify/types": "^2.0.0"
