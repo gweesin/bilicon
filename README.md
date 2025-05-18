@@ -9,6 +9,7 @@
 [![bundle][bundle-src]][bundle-href]
 [![JSDocs][jsdocs-src]][jsdocs-href]
 [![License][license-src]][license-href]
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3bd17822-81c1-4ec8-8b35-303a584de069/deploy-status)](https://app.netlify.com/projects/bilicon/deploys)
 
 English | [中文](./README.zh-CN.md)
 
