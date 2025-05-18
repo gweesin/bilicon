@@ -4,6 +4,7 @@ import { addCollection } from 'iconify-icon'
 import DefaultTheme from 'vitepress/theme'
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
+import BiliconIcons from '../components/BiliconIcons.vue'
 import './style.css'
 
 addCollection(biliIconifyJSON)
@@ -15,7 +16,7 @@ export default {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
     })
   },
-  enhanceApp() {
-    // ...
+  enhanceApp({ app }) {
+    app.component('BiliconIcons', BiliconIcons)
   },
 } satisfies Theme

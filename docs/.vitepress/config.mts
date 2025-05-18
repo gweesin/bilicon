@@ -1,16 +1,19 @@
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
   title: 'bilicon | iconify',
   description: 'using bilibili icon everywhere by iconify!',
   themeConfig: {
     siteTitle: 'bilicon',
     // https://vitepress.dev/reference/default-theme-config
-    // nav: [
-    //   { text: 'Home', link: '/' },
-    //   { text: 'Examples', link: '/markdown-examples' },
-    // ],
+    nav: [
+      { text: 'Icons', link: '/page/icons' },
+    ],
 
     sidebar: [
       {
