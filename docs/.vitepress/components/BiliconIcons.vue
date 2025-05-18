@@ -6,7 +6,7 @@ import { ref, computed } from 'vue'
 
 addCollection(biliIconifyJSON);
 const icons = ref([])
-fetch('/public/bili-order.json').then(res => res.json()).then((orderMap) => {
+fetch('/bili-order.json').then(res => res.json()).then((orderMap) => {
   icons.value = listIcons('', 'bili').sort((a, b) => {
     const aOrder = orderMap[a.replace('bili:', '')] || -1
     const bOrder = orderMap[b.replace('bili:', '')] || -1
