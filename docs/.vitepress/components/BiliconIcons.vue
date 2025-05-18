@@ -25,9 +25,9 @@ const computedIcons = computed(() => {
 <template>
   <div class="p-2 w-full">
     <div class="flex justify-end">
-      <div class="flex justify-center items-center border-b mr-10">
+      <div class="flex justify-center items-center border-b mx-6 w-full sm:mr-12 sm:w-auto">
         <Icon icon="iconamoon:search-thin" width="1.3em" height="1.3em" />
-        <input v-model="searchContent" placeholder="Search icons..." class="p-1!"/>
+        <input v-model="searchContent" placeholder="Search icons..." class="p-1! flex-1"/>
       </div>
     </div>
 
