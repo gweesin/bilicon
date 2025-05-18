@@ -3,24 +3,22 @@ import { Icon, addCollection, listIcons } from '@iconify/vue'
 import { biliIconifyJSON } from 'bilicon';
 import BiliIconCard from './BiliIconCard.vue';
 import { ref, computed } from 'vue'
+import biliOrderMap from '../../assets/bili-order.json'
 
 addCollection(biliIconifyJSON);
-const icons = ref([])
-fetch('/bili-order.json').then(res => res.json()).then((orderMap) => {
-  icons.value = listIcons('', 'bili').sort((a, b) => {
-    const aOrder = orderMap[a.replace('bili:', '')] || -1
-    const bOrder = orderMap[b.replace('bili:', '')] || -1
-    return aOrder - bOrder
-  })
+const icons = listIcons('', 'bili').sort((a, b) => {
+  const aOrder = biliOrderMap[a.replace('bili:', '')] || -1
+  const bOrder = biliOrderMap[b.replace('bili:', '')] || -1
+  return aOrder - bOrder
 })
 
 const searchContent = ref('')
 const computedIcons = computed(() => {
   if (searchContent.value.length > 0) {
-    return icons.value.filter((icon) => icon.includes(searchContent.value))
+    return icons.filter((icon) => icon.includes(searchContent.value))
   }
 
-  return icons.value;
+  return icons;
 })
 </script>
 
