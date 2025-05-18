@@ -18,6 +18,32 @@ using bilibili icon everywhere with iconify!!
 
 Bilibili has many interesting emojis, and it's very difficult to use them in other applications. This project aims to provide a way to use Bilibili's emojis in any application that supports iconify.
 
+## Installation
+
+1. install dependencies
+
+    ```shell
+    pnpm i -S bilicon
+    ```
+
+2. import and add as a collection to the iconify
+
+    ```js
+    import { biliIconifyJSON } from 'bilicon'
+    import { addCollection } from 'iconify-icon'
+
+    addCollection(biliIconifyJSON)
+    ```
+
+3. use in HTML
+
+```html
+<iconify-icon icon="bili:doge" />
+```
+
+> [!TIP]
+> More details in the [quick start](https://bilicon.netlify.app/guide/getting-started.html)
+
 ## License
 
 [MIT](./LICENSE) License © [Gweesin](https://github.com/gweesin)

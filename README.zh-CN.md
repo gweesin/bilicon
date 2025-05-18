@@ -18,6 +18,32 @@
 
 B 站有很多有意思的表情包，想在其他应用里使用这些表情包非常困难。这个项目旨在提供一种方法，可以在任何支持 iconify 的应用中使用 B 站的表情包。
 
+## 安装
+
+1. 安装依赖
+
+    ```shell
+    pnpm i -S bilicon
+    ```
+
+2. 集成到 iconify 中
+
+    ```js
+    import { biliIconifyJSON } from 'bilicon'
+    import { addCollection } from 'iconify-icon'
+
+    addCollection(biliIconifyJSON)
+    ```
+
+3. 在 HTML 中使用
+
+```html
+<iconify-icon icon="bili:doge" />
+```
+
+> [!TIP]
+> 更多详情见 [快速开始](https://bilicon.netlify.app/guide/getting-started.html)
+
 ## 许可证
 
 [MIT](./LICENSE) 许可证 © [Gweesin](https://github.com/gweesin)
