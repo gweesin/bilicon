@@ -1,6 +1,8 @@
-# <p align="center">bilicon</p>
+<br />
 
 <p align="center"><a href="https://bilicon.netlify.app/" target="_blank" rel="noopener noreferrer"><img width="200" src="https://bilicon.netlify.app/images/logo.png" alt="Bilibili Iconify Logo"></a></p>
+
+<h1 align="center">bilicon</h1>
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -11,6 +13,10 @@
 English | [中文](./README.zh-CN.md)
 
 using bilibili icon everywhere with iconify!!
+
+## Motivation
+
+Bilibili has many interesting emojis, and it's very difficult to use them in other applications. This project aims to provide a way to use Bilibili's emojis in any application that supports iconify.
 
 ## License
 

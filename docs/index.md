@@ -16,9 +16,6 @@ hero:
     - theme: alt
       text: Quick Start
       link: /guide/getting-started
-    - theme: alt
-      text: Github
-      link: https://github.com/gweesin/bilicon
 
 features:
   - title: Powered by Iconify

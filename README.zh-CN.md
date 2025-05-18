@@ -1,6 +1,8 @@
-# <p align="center">bilicon</p>
+<br />
 
 <p align="center"><a href="https://bilicon.netlify.app/" target="_blank" rel="noopener noreferrer"><img width="200" src="https://bilicon.netlify.app/images/logo.png" alt="Bilibili Iconify Logo"></a></p>
+
+<h1 align="center">bilicon</h1>
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -10,7 +12,11 @@
 
 [English](./README.md) | 中文
 
-通过 iconify 在任何地方使用 B 站图标！
+通过 iconify 在任何地方使用 B 站表情包！
+
+## 动机
+
+B 站有很多有意思的表情包，想在其他应用里使用这些表情包非常困难。这个项目旨在提供一种方法，可以在任何支持 iconify 的应用中使用 B 站的表情包。
 
 ## 许可证
 
