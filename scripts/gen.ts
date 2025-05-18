@@ -53,6 +53,12 @@ async function main(): Promise<void> {
     }),
   ))
 
+  const orderMap = icons.reduce((map, icon, idx) => {
+    map[replaceSquareBrackets(icon.text)] = idx
+    return map
+  }, {} as Record<string, number>)
+  await fse.writeJSON('./docs/public/bili-order.json', orderMap)
+
   const data = iconSet.export()
   await fse.writeJSON('./json/bili.json', data, {
     spaces: 2,
