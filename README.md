@@ -13,7 +13,7 @@
 
 English | [中文](./README.zh-CN.md)
 
-using bilibili icon everywhere with iconify!!
+using bilibili icon/emotions everywhere with iconify!!
 
 ## Motivation
 

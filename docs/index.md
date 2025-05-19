@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "bilicon"
-  text: "using bilibili icon everywhere!"
+  text: "using bilibili icon/emotions everywhere!"
   tagline: "integrate into your iconify in just few minutes"
   image:
     alt: bilicon logo

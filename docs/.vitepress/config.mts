@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   title: 'bilicon | iconify',
-  description: 'using bilibili icon everywhere by iconify!',
+  description: 'using bilibili icon/emotions everywhere by iconify!',
   themeConfig: {
     siteTitle: 'bilicon',
     // https://vitepress.dev/reference/default-theme-config
