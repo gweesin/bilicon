@@ -23,6 +23,13 @@ export default defineConfig({
           { text: 'Getting Started', link: '/guide/getting-started' },
         ],
       },
+      {
+        text: 'Icons',
+        items: [
+          { text: 'bilibili', link: '/page/icons' },
+          { text: 'zhihu', link: '/page/zhihu' },
+        ],
+      },
     ],
 
     socialLinks: [

@@ -1,10 +1,10 @@
 import type { BiliIconEmote, BiliIconPackage } from './types'
-import { Buffer } from 'node:buffer'
 import { blankIconSet } from '@iconify/tools'
 import fse from 'fs-extra'
 import pLimit from 'p-limit'
 import { author, license } from '../package.json'
 import { replaceSquareBrackets } from '../src/utils'
+import { encodeFromURL } from './utils'
 
 async function getEmotePackages(): Promise<BiliIconPackage[]> {
   const data = await fetch('https://api.bilibili.com/x/emote/user/panel/web?business=reply').then(response => response.json()).then(json => (json as unknown as { data: { packages: BiliIconPackage[] } }).data)
@@ -15,17 +15,6 @@ async function getEmotePackages(): Promise<BiliIconPackage[]> {
 async function getStandardIcons(): Promise<BiliIconEmote[]> {
   const packages = await getEmotePackages()
   return packages.find(pkg => pkg.text === '小黄脸')?.emote ?? []
-}
-
-async function encodeFromURL(url: string): Promise<string> {
-  const response = await fetch(url)
-  const blob = await response.blob()
-  const arrayBuffer = await blob.arrayBuffer()
-
-  const buffer = Buffer.from(arrayBuffer)
-  const base64 = buffer.toString('base64')
-
-  return `data:image/png;base64,${base64}`
 }
 
 async function main(): Promise<void> {
@@ -57,7 +46,7 @@ async function main(): Promise<void> {
     map[replaceSquareBrackets(icon.text)] = idx
     return map
   }, {} as Record<string, number>)
-  await fse.writeJSON('./docs/public/bili-order.json', orderMap)
+  await fse.writeJSON('./docs/assets/bili-order.json', orderMap)
 
   const data = iconSet.export()
   await fse.writeJSON('./json/bili.json', data, {

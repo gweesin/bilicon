@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Icon, addCollection, listIcons } from '@iconify/vue'
-import { biliIconifyJSON } from 'bilicon';
+import { zhihuIconifyJSON } from 'bilicon';
 import BiliIconCard from './BiliIconCard.vue';
 import { ref, computed } from 'vue'
-import orderMap from '../../assets/bili-order.json'
+import orderMap from '../../assets/zhihu-order.json'
 
-addCollection(biliIconifyJSON);
-const icons = listIcons('', 'bili').sort((a, b) => {
-  const aOrder = orderMap[a.replace('bili:', '')] || -1
-  const bOrder = orderMap[b.replace('bili:', '')] || -1
+addCollection(zhihuIconifyJSON);
+const icons = listIcons('', 'zhihu').sort((a, b) => {
+  const aOrder = orderMap[a.replace('zhihu:', '')] || -1
+  const bOrder = orderMap[b.replace('zhihu:', '')] || -1
   return aOrder - bOrder
 })
 
@@ -32,7 +32,7 @@ const computedIcons = computed(() => {
     </div>
 
     <div class="flex flex-wrap justify-center items-center gap-2 mt-2">
-      <BiliIconCard v-for="iconName in computedIcons" :key="iconName" prefix="bili" :icon-name="iconName.replace('bili:', '')" />
+      <BiliIconCard v-for="iconName in computedIcons" :key="iconName" prefix="zhihu" :icon-name="iconName.replace('zhihu:', '')" />
     </div>
   </div>
 </template>
