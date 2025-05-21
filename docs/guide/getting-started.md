@@ -83,3 +83,54 @@ addCollection(biliIconifyJSON)
 :::
 
 <iconify-icon icon="bili:doge" width="50"/>
+
+## zhihu
+
+::: tip v0.1.0
+
+v0.1.0 already support zhihu!!!
+
+:::
+
+::: code-group
+
+```js [Web Component]
+import { zhihuIconifyJSON } from 'bilicon'
+import { addCollection } from 'iconify-icon'
+
+addCollection(zhihuIconifyJSON)
+
+// Now you can use zhihu emoticon in your html as a web component
+// <iconify-icon icon="zhihu:吃瓜" />
+```
+
+```js [React]
+import { addCollection, Icon } from '@iconify/react'
+import { zhihuIconifyJSON } from 'bilicon'
+
+addCollection(zhihuIconifyJSON)
+
+// <Icon icon="zhihu:吃瓜" />
+```
+
+```js [Vue]
+import { addCollection, Icon } from '@iconify/vue'
+import { zhihuIconifyJSON } from 'bilicon'
+
+addCollection(zhihuIconifyJSON)
+
+// <Icon icon="zhihu:吃瓜" />
+```
+
+```js [Svelte]
+import Icon, { addCollection } from '@iconify/svelte'
+import { zhihuIconifyJSON } from 'bilicon'
+
+addCollection(zhihuIconifyJSON)
+
+// <Icon icon="zhihu:吃瓜" />
+```
+
+:::
+
+<iconify-icon icon="zhihu:吃瓜" width="50"/>
