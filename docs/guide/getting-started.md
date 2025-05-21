@@ -82,7 +82,7 @@ addCollection(biliIconifyJSON)
 
 :::
 
-<iconify-icon icon="bili:doge" width="50"/>
+<iconify-icon icon="bili:doge" width="50" class="hover:scale-175 transition-all origin-top-left" />
 
 ## zhihu
 
@@ -133,4 +133,4 @@ addCollection(zhihuIconifyJSON)
 
 :::
 
-<iconify-icon icon="zhihu:吃瓜" width="50"/>
+<iconify-icon icon="zhihu:吃瓜" width="50" class="hover:scale-175 transition-all origin-top-left" />
