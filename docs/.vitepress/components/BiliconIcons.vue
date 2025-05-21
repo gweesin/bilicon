@@ -36,7 +36,3 @@ const computedIcons = computed(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-
-</style>
