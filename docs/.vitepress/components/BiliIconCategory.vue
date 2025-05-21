@@ -37,7 +37,7 @@ const computedIcons = computed(() => {
       <div class="text-[var(--vp-c-text-2)]">{{ category }}</div>
     </div>
 
-    <div class="flex flex-wrap justify-center items-center gap-2 mt-2">
+    <div class="grid IconCardLayout gap-2 mt-2 justify-center">
       <BiliIconCard v-for="iconName in computedIcons" :key="iconName" :prefix="iconSet.prefix" :icon-name="iconName" />
     </div>
   </div>

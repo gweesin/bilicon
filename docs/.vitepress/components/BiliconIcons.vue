@@ -19,7 +19,7 @@ const keyword = ref('')
 </script>
 
 <template>
-  <div class="p-2 w-full">
+  <div class="w-full p-2 pb-8">
     <div class="flex justify-end mb-2 relative">
       <div class="flex justify-center items-center border-b mx-6 w-full sm:mr-12 sm:w-auto absolute top-2">
         <Icon icon="iconamoon:search-thin" width="1.3em" height="1.3em" />

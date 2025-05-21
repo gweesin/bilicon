@@ -23,7 +23,7 @@ const computedIcons = computed(() => {
 </script>
 
 <template>
-  <div class="p-2 w-full">
+  <div class="w-full p-2 pb-8">
     <div class="flex justify-end">
       <div class="flex justify-center items-center border-b mx-6 w-full sm:mr-12 sm:w-auto">
         <Icon icon="iconamoon:search-thin" width="1.3em" height="1.3em" />
@@ -31,7 +31,7 @@ const computedIcons = computed(() => {
       </div>
     </div>
 
-    <div class="flex flex-wrap justify-center items-center gap-2 mt-2">
+    <div class="grid IconCardLayout gap-2 mt-2 justify-center">
       <BiliIconCard v-for="iconName in computedIcons" :key="iconName" prefix="zhihu" :icon-name="iconName.replace('zhihu:', '')" />
     </div>
   </div>

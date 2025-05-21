@@ -139,3 +139,6 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+.IconCardLayout {
+  grid-template-columns: repeat(auto-fill, 102px);
+}
