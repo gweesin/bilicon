@@ -6,6 +6,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   title: 'bilicon | iconify',
   description: 'using bilibili icon/emotions everywhere by iconify!',
   themeConfig: {
