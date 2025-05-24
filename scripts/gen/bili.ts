@@ -25,10 +25,9 @@ async function main(): Promise<void> {
       title: license,
     },
   }
-  await spiderRunner.run(iconSet)
 
-  const data = iconSet.export()
-  await writeJSONFile('./json/bili.json', data)
+  await spiderRunner.run(iconSet)
+  await writeJSONFile('./json/bili.json', iconSet.export())
 }
 
 export class BiliIconSpiderRunner extends IconSpiderRunner {

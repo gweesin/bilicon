@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { Icon, addCollection, listIcons } from '@iconify/vue'
-import { zhihuIconifyJSON } from 'bilicon';
+import zhihu from 'bilicon/json/zhihu.json'
 import BiliIconCard from './BiliIconCard.vue';
 import { ref, computed } from 'vue'
 import orderMap from '../../assets/zhihu-order.json'
 
-addCollection(zhihuIconifyJSON);
+addCollection(zhihu);
 const icons = listIcons('', 'zhihu').sort((a, b) => {
-  const aOrder = orderMap[a.replace('zhihu:', '')] || -1
-  const bOrder = orderMap[b.replace('zhihu:', '')] || -1
+  const aOrder = orderMap[a.replace('zhihu:', '')] || 999
+  const bOrder = orderMap[b.replace('zhihu:', '')] || 999
   return aOrder - bOrder
 })
 

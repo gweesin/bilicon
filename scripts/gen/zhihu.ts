@@ -1,11 +1,16 @@
 import type { ArrayExpression, Identifier, Literal, Node, ObjectExpression, Program, Property } from 'acorn'
+import type { BiliIconGroups } from './icon-generator'
 import { blankIconSet, writeJSONFile } from '@iconify/tools'
-import { parse } from 'acorn'
+import {
+
+  parse,
+
+} from 'acorn'
 import { simple } from 'acorn-walk'
-import pLimit from 'p-limit'
 import { author, license } from '../../package.json'
 import { replaceSquareBrackets } from '../../src/utils'
 import { encodeFromURL } from '../utils'
+import { IconSpiderRunner } from './icon-generator'
 
 interface Sticker {
   static_image_url: string
@@ -63,14 +68,40 @@ function convertToEmoticon(ast: Program): EmoticonGroup[] {
   return emoticonGroups
 }
 
+class ZhihuIconSpiderRunner extends IconSpiderRunner {
+  async getIconContent(url: string): Promise<string> {
+    const dataURI = await encodeFromURL(url)
+
+    return `<image width="100%" height="100%" xlink:href="${dataURI}" />`
+  }
+
+  async getIconGroups(): Promise<BiliIconGroups[]> {
+    const code = await fetch('https://unpkg.zhimg.com/@cfe/emoticon@latest/lib/emoticon.js').then(res => res.text())
+    const ast = parse(code, { ecmaVersion: 2020, locations: true })
+
+    const emoticonGroups = convertToEmoticon(ast)
+
+    return emoticonGroups.map(group => ({
+      name: group.title,
+      emotes: group.stickers.map((sticker) => {
+        let name = replaceSquareBrackets(sticker.title)
+
+        if (group.title !== '默认') {
+          name = `${group.title}_${name}`
+        }
+
+        return {
+          name,
+          url: sticker.static_image_url,
+        }
+      }),
+    }))
+  }
+}
+
 async function main() {
-  const code = await fetch('https://unpkg.zhimg.com/@cfe/emoticon@latest/lib/emoticon.js').then(res => res.text())
-  const ast = parse(code, { ecmaVersion: 2020, locations: true })
-
-  const emoticonGroups = convertToEmoticon(ast)
   // TODO deal others
-  const defaultEmoticon = emoticonGroups.find(emoticonGrp => emoticonGrp.title === '默认')!
-
+  const spiderRunner = new ZhihuIconSpiderRunner()
   const iconSet = blankIconSet('zhihu')
   iconSet.info = {
     name: 'zhihu',
@@ -82,23 +113,7 @@ async function main() {
     },
   }
 
-  const limit = pLimit(10)
-
-  await Promise.all(defaultEmoticon.stickers.map(icon =>
-    limit(async () => {
-      const dataURI = await encodeFromURL(icon.static_image_url)
-
-      iconSet.setIcon(replaceSquareBrackets(icon.title), {
-        body: `<image width="100%" height="100%" xlink:href="${dataURI}" />`,
-      })
-    }),
-  ))
-
-  const orderMap = defaultEmoticon.stickers.reduce((map, icon, idx) => {
-    map[replaceSquareBrackets(icon.title)] = idx
-    return map
-  }, {} as Record<string, number>)
-  await writeJSONFile('./docs/assets/zhihu-order.json', orderMap)
+  await spiderRunner.run(iconSet)
   await writeJSONFile('./json/zhihu.json', iconSet.export())
 }
 
