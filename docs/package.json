@@ -11,11 +11,11 @@
     "@iconify/vue": "^5.0.0",
     "bilicon": "workspace:^",
     "iconify-icon": "^3.0.0",
-    "vue": "^3.5.14"
+    "vue": "^3.5.16"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.7",
-    "tailwindcss": "^4.1.7",
+    "@tailwindcss/vite": "^4.1.10",
+    "tailwindcss": "^4.1.10",
     "vitepress": "^1.6.3"
   }
 }
