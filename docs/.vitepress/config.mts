@@ -9,6 +9,10 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   title: 'bilicon | iconify',
   description: 'using bilibili icon/emotions everywhere by iconify!',
+  lastUpdated: true,
+  sitemap: {
+    hostname: 'https://bilicon.gweesin.com',
+  },
   themeConfig: {
     siteTitle: 'bilicon',
     // https://vitepress.dev/reference/default-theme-config
