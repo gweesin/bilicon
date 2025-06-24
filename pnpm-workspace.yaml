@@ -10,10 +10,10 @@ catalog:
 
 catalogs:
   cli:
-    '@antfu/eslint-config': ^4.14.1
+    '@antfu/eslint-config': ^4.16.1
     '@antfu/ni': ^24.4.0
-    bumpp: ^10.1.1
-    eslint: ^9.28.0
+    bumpp: ^10.2.0
+    eslint: ^9.29.0
     lint-staged: ^15.5.2
     simple-git-hooks: ^2.13.0
     tsx: ^4.20.3
@@ -23,11 +23,11 @@ catalogs:
   inlined:
     '@antfu/utils': ^9.2.0
   testing:
-    vitest: ^3.2.3
+    vitest: ^3.2.4
     vitest-package-exports: ^0.1.1
     yaml: ^2.8.0
   types:
-    '@types/node': ^22.15.31
+    '@types/node': ^22.15.32
   utils:
     tinyexec: ^0.3.2
 
