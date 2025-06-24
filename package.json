@@ -33,9 +33,11 @@
     "prepublishOnly": "nr build",
     "release": "bumpp && pnpm publish",
     "start": "tsx src/index.ts",
-    "gen": "run-p gen:bili gen:zhihu",
+    "gen": "run-p gen:bili gen:zhihu gen:douyin",
     "gen:bili": "tsx scripts/gen/bili.ts",
     "gen:zhihu": "tsx scripts/gen/zhihu.ts",
+    "gen:douyin": "tsx scripts/gen/douyin.ts",
+    "postgen": "eslint --fix",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks",
@@ -74,5 +76,9 @@
   },
   "lint-staged": {
     "*": "eslint --fix"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

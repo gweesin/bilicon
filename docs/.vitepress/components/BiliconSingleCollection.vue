@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { Icon, addCollection, listIcons } from '@iconify/vue'
-import zhihu from 'bilicon/json/zhihu.json'
+import { Icon, listIcons } from '@iconify/vue'
 import BiliIconCard from './BiliIconCard.vue';
 import { ref, computed } from 'vue'
 import orderMap from '../../assets/zhihu-order.json'
 
-addCollection(zhihu);
-const icons = listIcons('', 'zhihu').sort((a, b) => {
-  const aOrder = orderMap[a.replace('zhihu:', '')] || 999
-  const bOrder = orderMap[b.replace('zhihu:', '')] || 999
+const props = defineProps({
+  prefix: {
+    type: String,
+    required: true
+  }
+})
+
+const icons = listIcons('', props.prefix).sort((a, b) => {
+  const aOrder = orderMap[a.replace(props.prefix + ':', '')] || 999
+  const bOrder = orderMap[b.replace(props.prefix + ':', '')] || 999
   return aOrder - bOrder
 })
 
@@ -32,7 +37,7 @@ const computedIcons = computed(() => {
     </div>
 
     <div class="grid IconCardLayout gap-2 mt-2 justify-center">
-      <BiliIconCard v-for="iconName in computedIcons" :key="iconName" prefix="zhihu" :icon-name="iconName.replace('zhihu:', '')" />
+      <BiliIconCard v-for="iconName in computedIcons" :key="iconName" :prefix="prefix" :icon-name="iconName.replace(prefix + ':', '')" />
     </div>
   </div>
 </template>

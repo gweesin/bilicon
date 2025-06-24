@@ -5,7 +5,7 @@ import DefaultTheme from 'vitepress/theme'
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import BiliconIcons from '../components/BiliconIcons.vue'
-import BiliconZhihuIcons from '../components/BiliconZhihuIcons.vue'
+import BiliconSingleCollection from '../components/BiliconSingleCollection.vue'
 import './style.css'
 
 addCollection(biliIconifyJSON)
@@ -20,6 +20,6 @@ export default {
   },
   enhanceApp({ app }) {
     app.component('BiliconIcons', BiliconIcons)
-    app.component('BiliconZhihuIcons', BiliconZhihuIcons)
+    app.component('BiliconSingleCollection', BiliconSingleCollection)
   },
 } satisfies Theme

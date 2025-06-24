@@ -33,6 +33,7 @@ export default defineConfig({
         items: [
           { text: 'bilibili', link: '/page/icons' },
           { text: 'zhihu', link: '/page/zhihu' },
+          { text: 'douyin', link: '/page/douyin' },
         ],
       },
     ],
