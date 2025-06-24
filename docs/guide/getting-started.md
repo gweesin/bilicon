@@ -86,12 +86,6 @@ addCollection(biliIconifyJSON)
 
 ## zhihu
 
-::: tip v0.1.0
-
-v0.1.0 already support zhihu!!!
-
-:::
-
 ::: code-group
 
 ```js [Web Component]
@@ -134,3 +128,48 @@ addCollection(zhihuIconifyJSON)
 :::
 
 <iconify-icon icon="zhihu:吃瓜" width="50" class="hover:scale-175 transition-all origin-top-left" />
+
+## douyin
+
+::: code-group
+
+```js [Web Component]
+import { douyinIconifyJSON } from 'bilicon'
+import { addCollection } from 'iconify-icon'
+
+addCollection(douyinIconifyJSON)
+
+// Now you can use zhihu emoticon in your html as a web component
+// <iconify-icon icon="douyin:九转大肠" />
+```
+
+```js [React]
+import { addCollection, Icon } from '@iconify/react'
+import { douyinIconifyJSON } from 'bilicon'
+
+addCollection(douyinIconifyJSON)
+
+// <Icon icon="douyin:九转大肠" />
+```
+
+```js [Vue]
+import { addCollection, Icon } from '@iconify/vue'
+import { douyinIconifyJSON } from 'bilicon'
+
+addCollection(douyinIconifyJSON)
+
+// <Icon icon="douyin:九转大肠" />
+```
+
+```js [Svelte]
+import Icon, { addCollection } from '@iconify/svelte'
+import { douyinIconifyJSON } from 'bilicon'
+
+addCollection(douyinIconifyJSON)
+
+// <Icon icon="douyin:九转大肠" />
+```
+
+:::
+
+<iconify-icon icon="douyin:九转大肠" width="50" class="hover:scale-175 transition-all origin-top-left" />
