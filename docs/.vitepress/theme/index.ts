@@ -1,5 +1,5 @@
 import type { Theme } from 'vitepress'
-import { biliIconifyJSON, douyinIconifyJSON, zhihuIconifyJSON } from 'bilicon'
+import { biliIconifyJSON, douyinIconifyJSON, rednoteIconifyJSON, zhihuIconifyJSON } from 'bilicon'
 import { addCollection } from 'iconify-icon'
 import DefaultTheme from 'vitepress/theme'
 // https://vitepress.dev/guide/custom-theme
@@ -11,6 +11,7 @@ import './style.css'
 addCollection(biliIconifyJSON)
 addCollection(zhihuIconifyJSON)
 addCollection(douyinIconifyJSON)
+addCollection(rednoteIconifyJSON)
 
 export default {
   extends: DefaultTheme,

@@ -41,6 +41,7 @@ export default defineConfig({
           { text: 'bilibili', link: '/page/icons' },
           { text: 'zhihu', link: '/page/zhihu' },
           { text: 'douyin', link: '/page/douyin' },
+          { text: 'rednote', link: '/page/rednote' },
         ],
       },
     ],

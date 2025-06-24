@@ -82,7 +82,7 @@ addCollection(biliIconifyJSON)
 
 :::
 
-<iconify-icon icon="bili:doge" width="50" class="hover:scale-175 transition-all origin-top-left" />
+<iconify-icon icon="bili:doge" width="30" class="hover:scale-175 transition-all origin-top-left" />
 
 ## zhihu
 
@@ -127,7 +127,7 @@ addCollection(zhihuIconifyJSON)
 
 :::
 
-<iconify-icon icon="zhihu:吃瓜" width="50" class="hover:scale-175 transition-all origin-top-left" />
+<iconify-icon icon="zhihu:吃瓜" width="30" class="hover:scale-175 transition-all origin-top-left" />
 
 ## douyin
 
@@ -172,4 +172,49 @@ addCollection(douyinIconifyJSON)
 
 :::
 
-<iconify-icon icon="douyin:九转大肠" width="50" class="hover:scale-175 transition-all origin-top-left" />
+<iconify-icon icon="douyin:九转大肠" width="30" class="hover:scale-175 transition-all origin-top-left" />
+
+## rednote
+
+::: code-group
+
+```js [Web Component]
+import { rednoteIconifyJSON } from 'bilicon'
+import { addCollection } from 'iconify-icon'
+
+addCollection(rednoteIconifyJSON)
+
+// Now you can use zhihu emoticon in your html as a web component
+// <iconify-icon icon="rednote:doge" />
+```
+
+```js [React]
+import { addCollection, Icon } from '@iconify/react'
+import { rednoteIconifyJSON } from 'bilicon'
+
+addCollection(rednoteIconifyJSON)
+
+// <Icon icon="rednote:doge" />
+```
+
+```js [Vue]
+import { addCollection, Icon } from '@iconify/vue'
+import { rednoteIconifyJSON } from 'bilicon'
+
+addCollection(rednoteIconifyJSON)
+
+// <Icon icon="rednote:doge" />
+```
+
+```js [Svelte]
+import Icon, { addCollection } from '@iconify/svelte'
+import { rednoteIconifyJSON } from 'bilicon'
+
+addCollection(rednoteIconifyJSON)
+
+// <Icon icon="rednote:doge" />
+```
+
+:::
+
+<iconify-icon icon="rednote:doge" width="30" class="hover:scale-175 transition-all origin-top-left" />

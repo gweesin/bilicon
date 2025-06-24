@@ -28,3 +28,15 @@ export interface DouyinIconEmote {
     url_list: [string, string]
   }
 }
+
+export interface RedNoteEmoteIcon {
+  image_name: string
+
+  // url
+  image?: string
+}
+
+export interface RedNoteCollection {
+  emoji: RedNoteEmoteIcon[]
+  name: string
+}
