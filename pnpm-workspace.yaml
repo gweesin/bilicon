@@ -10,16 +10,16 @@ catalog:
 
 catalogs:
   cli:
-    '@antfu/eslint-config': ^4.16.1
-    '@antfu/ni': ^24.4.0
+    '@antfu/eslint-config': ^4.16.2
+    '@antfu/ni': ^25.0.0
     bumpp: ^10.2.0
-    eslint: ^9.29.0
-    lint-staged: ^15.5.2
+    eslint: ^9.30.1
+    lint-staged: ^16.1.2
     simple-git-hooks: ^2.13.0
     tsx: ^4.20.3
     typescript: ^5.8.3
     unbuild: ^3.5.0
-    vite: ^6.3.5
+    vite: ^7.0.3
   inlined:
     '@antfu/utils': ^9.2.0
   testing:
@@ -27,9 +27,9 @@ catalogs:
     vitest-package-exports: ^0.1.1
     yaml: ^2.8.0
   types:
-    '@types/node': ^22.15.32
+    '@types/node': ^24.0.12
   utils:
-    tinyexec: ^0.3.2
+    tinyexec: ^1.0.1
 
 onlyBuiltDependencies:
   - esbuild
